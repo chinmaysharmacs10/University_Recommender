@@ -6,7 +6,7 @@
 * A __deep neural network__ was built using __Keras__ for multi-class classifiaction.
 * Built a client facing web application using __Django__. 
 * __Python Version__: 3.6.10
-* __Libraries Used__: Pandas, Matplotlib, Seaborn, sklearn, imblearn, Tensorflow, Keras, Django, Joblib.
+* __Libraries Used__: Pandas, Matplotlib, Seaborn, sklearn, imblearn, Tensorflow, Keras, Joblib, Django, crispy-forms.
 * References: https://github.com/aditya-sureshkumar/University-Recommendation-System/blob/master/recommendationSystem/Ramkishore_Joe_Swetha_Aditya.pdf
 
 ## Cleaning the Data
