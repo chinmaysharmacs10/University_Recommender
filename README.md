@@ -40,7 +40,7 @@
 
 ## Data Preprocessing
 ###### (File: classifier_model.py)
-* To remove the imbalance in the dataset and prevent high bias in the model, __SMOTE - Synthetic Minority Oversampling Technique__ from __imblearn library__ is used for over sampling with sampling_stratergy set to 'not majority'. It generates new instances for all the classes except the majority class to balance the dataset.  
+* To remove the imbalance in the dataset and prevent overfitting in the model, __SMOTE - Synthetic Minority Oversampling Technique__ from __imblearn library__ is used for over sampling with sampling_stratergy set to 'not majority'. It generates new instances for all the classes except the majority class to balance the dataset.  
 * The university names we encoded with unique labels by __LabelEncoder__ of __sklearn library__ to be fed to SMOTE.
 * __RobustScaler__ of __sklearn library__ was used to scale the data in order to reduce the effect of variation in parameter values, as there is alot of variation in case of researchExp, industryExp & internExp.
 * The data was split into train and test set, with 20% of data as test set.
@@ -49,14 +49,23 @@
 ###### (File: classifier_model.py)
 * A deep neural network with an input layer (400 neurons), 2 hidden layers (800 & 100 neurons respectively) and an output layer with 36 neurons (for 36 classes) is built using the __Keras (Tensorflow backend)__ library.
 * The input and hidden layers have ReLU activation function, and for multiclass classification task the output layer has a Softmax acivation function.
-* The model is trained with __Adam__ optimizer and __categorical crossentropy__ loss. It achieves a good __accuracy of 78.64__.
+* The model is trained with __Adam__ optimizer and __categorical crossentropy__ loss. It achieves a good __accuracy of 78.64%__.
 * To visualize the correctness of classification __Confusion Matrix__ is plotted.
 
 ![alt text](https://github.com/chinmaysharmacs10/University_Recommender/blob/master/Images/Confusion_Matrix_3.png "Confusion Matrix")
 
 * Model was pickled using the __Joblib library__.
 
+## Django Web Application with classification model in backend
+###### (Folder: recommender_website)
+* Created Django form with the details to be entered (greV, greQ, greA, toeflScore, cgpa_4, researchExp, industryExp, internExp) as form fields.
+(File: recommender_website/app/forms.py)
+* Created views for index page and prediction page. The predict_uni view makes a dictionary of the data entered in the form by user and inputs the values of the dictionary to the pickled classifier model.
+(File: recommender_website/app/views.py)
+* The model outputs the label index of the recommended University. The name of the university is fetched from a dictionary with label index as key and university name as values (File: university_dict.ipynb).
+* A HTML page is rendered with the form and the recommended University. (File: recommender_website/templates/index.html)
 
+![alt text](https://github.com/chinmaysharmacs10/University_Recommender/blob/master/Images/Homepage.png "WebApp")
 
 
 
