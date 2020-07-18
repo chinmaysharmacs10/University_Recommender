@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>University Recommender</title>
+    <meta charset="utf-8">
+
+</head>
+
+<body>
+<h1> Find out the University you are eligible for! </h1>
+<h3> Please enter your details: </h3>
+<form method="post" enctype="multipart/form-data" action="predict">
+        {% csrf_token %}
+        <div class="col-md-4 col-sm-4"><label for="fname">GRE Quantitative Score:</label> </div> <input name="greQ" type="text" value={{student.greQ}}><br><br>
+        <div class="col-md-4 col-sm-4"><label for="lname">GRE Verbal Score:</label> </div> <input type="text" id="lname" name="greV" value={{student.greV}}><br><br>
+        <div class="col-md-4 col-sm-4"><label for="fname">GRE Analytical Writing Score:</label> </div> <input type="text" id="fname" name="greA" value={{student.greA}}><br><br>
+        <div class="col-md-4 col-sm-4"><label for="lname">TOEFL Score:</label> </div> <input type="text" id="lname" name="toefl" value={{student.toeflScore}}><br><br>
+        <div class="col-md-4 col-sm-4"><label for="fname">CGPA (on 4-point scale):</label></div>  <input type="text" id="fname" name="cgpa" value={{student.cgpa_4}}><br><br>
+        <div class="col-md-4 col-sm-4"><label for="lname">Research Experience (in months):</label> </div> <input type="text" id="lname" name="research" value={{student.researchExp}}><br><br>
+        <div class="col-md-4 col-sm-4"><label for="lname">Industry Experience (in months):</label> </div> <input type="text" id="lname" name="industry" value={{student.industryExp}}><br><br>
+        <div class="col-md-4 col-sm-4"><label for="lname">Intern Experience (in months):</label> </div> <input type="text" id="lname" name="intern" value={{student.internExp}}><br>
+        <br>
+        <input type="submit" value="Submit" ></div>
+    <br>
+    <h2>{{univ}}</h2>
+
+</form>
+</body>
+
+</html>
