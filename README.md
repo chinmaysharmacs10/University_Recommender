@@ -64,6 +64,7 @@
 (File: recommender_website/app/views.py)
 * The model outputs the label index of the recommended University. The name of the university is fetched from a dictionary with label index as key and university name as values (File: university_dict.ipynb).
 * A HTML page is rendered with the form and the recommended University. (File: recommender_website/templates/index.html)
+* __Recommended University at http://127.0.0.1:8000/predict :__
 
 ![alt text](https://github.com/chinmaysharmacs10/University_Recommender/blob/master/Images/Webapp.png "WebApp")
 
