@@ -26,7 +26,7 @@
 ## Exploratory Data Analysis (EDA)
 ###### (File: data_analysis_EDA.ipynb)
 * The ugCollege had 980 categories which will add alot of dimensions to the data after one-hot encoding. Also, a sigle college is written in different ways which causes inconsistency, eg: BIT, Mesra and Birla Institute of Technology, Mesra. So the ugCollege column is removed.
-* Generated a word cloud to display the different UG Colleges and their frequency in the dataset.
+* Generated a word cloud to display the different UG Colleges and their frequency in the dataset. (File: ugCollege_wordcloud.py)
 
 ![alt text](https://github.com/chinmaysharmacs10/University_Recommender/blob/master/Images/wordcloud_ugCollege.png "UG Colleges")
 
